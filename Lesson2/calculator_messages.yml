@@ -1,15 +1,40 @@
-
-welcome: "Welcome to Calculator! Enter your name:"
-valid_name: "Make sure to enter a valid name."
-first_number: "What is the first number?"
-second_number: "What is the second number?"
-hmm: "Hmm that doesn't look like a valid number"
-operator_prompt: "What operation would you like to perform?
+en:
+  welcome: "Welcome to Calculator! Enter your name:"
+  valid_name: "Make sure to enter a valid name."
+  first_number: "What is the first number?"
+  second_number: "What is the second number?"
+  hmm: "Hmm that doesn't look like a valid number"
+  operator_prompt: "What operation would you like to perform?
                    1) add
                    2) subtract
                    3) multiply
                    4) divide"
-choose: "Must choose 1,2,3 or 4"
-two: " the two numbers..."
-again?: "Do you want to perform another calculation?(Y to caluclate again)"
-thanks: "Thank you for using the calculator!"
+  choose: "Must choose 1,2,3 or 4"
+  a: "Adding"
+  s: "Subtracting"
+  m: "Multiplying"
+  d: "Divinding"
+  two: " the two numbers..."
+  result: "The result is"
+  again?: "Do you want to perform another calculation?(Y to caluclate again)"
+  thanks: "Thank you for using the calculator!"
+es:
+    welcome: "¡Bienvenido a Calculadora! Ingrese su nombre:"
+    valid_name: "Asegúrate de ingresar un nombre válido."
+    first_number: "¿Cuál es el primer número?"
+    second_number: "¿Cuál es el segundo número?"
+    hmm: "Hmm, eso no parece un número válido"
+    operator_prompt: "¿Qué operación le gustaría realizar?
+                   1) agregar
+                   2) restar
+                   3) multiplicar
+                   4) dividir"
+    choose: "Debe elegir 1,2,3 o 4"
+    a: "Agregando"
+    s: "Restando"
+    m: "Multiplicando"
+    d: "Divisando"
+    two: " los dos números..."
+    result: "El resulto es"
+    again?: "¿Quieres hacer otro cálculo? (Y volver a calcular)"
+    thanks: "¡Gracias por usar la calculadora!"
