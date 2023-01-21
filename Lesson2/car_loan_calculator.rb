@@ -17,15 +17,14 @@ else
   LANGUAGE = 'es'
 end
 
-loop do 
+loop do
   prompt(messages('welcome', LANGUAGE))
 
   loan_amount = nil
   loop do
     prompt(messages('loan', LANGUAGE))
     loan_amount = gets().chomp()
-  
-    if loan_amount.empty? || loan_amount.to_i <= 0 
+    if loan_amount.empty? || loan_amount.to_i <= 0
       prompt('error', LANGUAGE)
     else
       break
@@ -33,10 +32,10 @@ loop do
   end
 
   loan_term_years = nil
-  loop do 
+  loop do
     prompt(messages('years', LANGUAGE))
     loan_term_years = gets().chomp
-    if loan_term_years.empty? || loan_term_years.to_i <= 0 
+    if loan_term_years.empty? || loan_term_years.to_i <= 0
       prompt(messages('error', LANGUAGE))
     else
       break
@@ -44,7 +43,7 @@ loop do
   end
 
   loan_term_months = nil
-  loop do 
+  loop do
     prompt(messages('months', LANGUAGE))
     loan_term_months = gets().chomp()
     if loan_term_months.empty? || loan_term_months.to_i.to_s != loan_term_months
@@ -58,7 +57,7 @@ loop do
   loop do
     prompt(messages('APR', LANGUAGE))
     apr = gets().chomp()
-    if apr.empty? || apr.to_f <= 0 
+    if apr.empty? || apr.to_f <= 0
       prompt(messages('error', LANGUAGE))
     else
       break
