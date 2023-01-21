@@ -1,0 +1,19 @@
+en:
+  welcome: "Welcome to the ONE and ONLY Car Loan Calculator!"
+  loan: "Loan Amount:"
+  error: "Not Valid"
+  years: "Loan Term (years):"
+  months: "Loan Term (months):"
+  APR: "APR:"
+  output: "Your monthly payment is: " 
+  final: "Would you like to do another calculation? (Y for yes)"
+
+es: 
+  welcome: "¡Bienvenido a la ÚNICA calculadora de préstamos para automóviles!"
+  loan: "Monto del préstamo:"
+  error: "No Valido"
+  years: "Plazo del Prestamo (anos):"
+  months: "Plazo del Prestamo (meses):"
+  APR: "APR:"
+  output: "Su pago mensual es: "
+  final: "Te gustaria hacer otro calculo? (Y por si)"
