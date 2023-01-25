@@ -19,7 +19,6 @@ end
 
 loop do
   prompt(messages('welcome', LANGUAGE))
-
   loan_amount = nil
   loop do
     prompt(messages('loan', LANGUAGE))
