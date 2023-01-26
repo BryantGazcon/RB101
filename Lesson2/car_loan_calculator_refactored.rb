@@ -43,12 +43,16 @@ require 'bigdecimal'
 def valid_float?(num)
   if valid_integer?(num)
     true
-  elsif BigDecimal(num)
-    true
   else
-    false
+    begin
+      float = BigDecimal(num)
+      float.positive? && true
+    rescue ArgumentError
+      false
+    end
   end
 end
+
 
 def valid_number?(num)
   valid_integer?(num) || valid_float?(num)
@@ -150,10 +154,10 @@ loop do # Main Loop
 
   if LANGUAGE == 'en'
     break unless input.start_with?('y')
-  else
+  else 
     break unless input.start_with?('s')
-  end
-end
+  end  
+end 
 
 clear_screen(0.5)
 prompt(messages('goodbye', LANGUAGE))
