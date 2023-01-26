@@ -53,7 +53,6 @@ def valid_float?(num)
   end
 end
 
-
 def valid_number?(num)
   valid_integer?(num) || valid_float?(num)
 end
@@ -154,10 +153,10 @@ loop do # Main Loop
 
   if LANGUAGE == 'en'
     break unless input.start_with?('y')
-  else 
+  else
     break unless input.start_with?('s')
-  end  
-end 
+  end
+end
 
 clear_screen(0.5)
 prompt(messages('goodbye', LANGUAGE))
