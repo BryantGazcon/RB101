@@ -4,9 +4,10 @@ en:
   error: "Not Valid"
   years: "Loan Term (years):"
   months: "Loan Term (months):"
-  APR: "APR:"
+  APR: "APR (5% => 5, 1.9% => 1.9):"
   output: "Your monthly payment is: " 
-  final: "Would you like to do another calculation? (Y for yes)"
+  final: "Would you like to do another calculation? (Type yes or no)"
+  goodbye: "Goodbye...Thank you for using me!"
 
 es: 
   welcome: "¡Bienvenido a la ÚNICA Calculadora de Préstamos para Automóviles!"
@@ -14,6 +15,7 @@ es:
   error: "No Válido"
   years: "Plazo del Préstamo (años):"
   months: "Plazo del Préstamo (meses):"
-  APR: "APR:"
+  APR: "APR (5% => 5, 1.9% => 1.9):"
   output: "Su pago mensual es: "
-  final: "¿Te gustaría hacer otro cálculo? (S por si)"
+  final: "¿Te gustaría hacer otro cálculo? (Escriba si o no)"
+  goodbye: "Adios...Gracias por usarme!"

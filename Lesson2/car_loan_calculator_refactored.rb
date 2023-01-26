@@ -38,13 +38,14 @@ def valid_integer?(num)
   (num.to_i.to_s == num) && (num.to_i >= 0)
 end
 
-
+# include trailing zeros when inputting APR
+require 'bigdecimal'
 def valid_float?(num)
   if valid_integer?(num)
-    return true
-  elsif num.to_f.to_s == num && (num.to_f >= 0)
-    return true
-  else 
+    true
+  elsif BigDecimal(num)
+    true
+  else
     false
   end
 end
@@ -61,12 +62,16 @@ def calculate_monthly_interest(rate)
   (rate.to_f / 100) / 12
 end
 
-def calculate_monthly_payment(p,j,n)
-  p.to_f * (j.to_f / (1 - (1 + j.to_f)**(-n)))
+def calculate_monthly_payment(p, j, n)
+  if j != 0
+    (p.to_f * j.to_f) / (1 - (1 + j.to_f)**(-n))
+  else
+    p.to_f / n.to_f
+  end
 end
 
 def clear_screen(num)
-  sleep(num) 
+  sleep(num)
   system('clear')
 end
 
@@ -81,7 +86,8 @@ end
 loop do # Main Loop
   prompt(messages('welcome', LANGUAGE))
   clear_screen(1.5)
-  
+
+  # Loan Amount
   loan_amount = nil
   loop do
     prompt(messages('loan', LANGUAGE))
@@ -94,6 +100,7 @@ loop do # Main Loop
     end
   end
 
+  # Loan Term
   loan_term_years = nil
   loan_term_months = nil
   loop do
@@ -104,7 +111,7 @@ loop do # Main Loop
     else
       prompt(messages('error', LANGUAGE))
     end
-    
+
     prompt((messages('months', LANGUAGE)))
     loan_term_months = gets().chomp()
     if valid_number?(loan_term_months)
@@ -114,6 +121,7 @@ loop do # Main Loop
     end
   end
 
+  # APR
   clear_screen(0.5)
   apr = nil
   loop do
@@ -127,21 +135,25 @@ loop do # Main Loop
     end
   end
 
+  # Calculations
   loan_term = calculate_loan_term(loan_term_years, loan_term_months)
-  
+
   monthly_interest_rate = calculate_monthly_interest(apr)
 
   monthly_payment = calculate_monthly_payment(loan_amount, monthly_interest_rate, loan_term)
 
-  prompt(messages('output', LANGUAGE) + "$#{monthly_payment.round(1)}")
-  
+  prompt(messages('output', LANGUAGE) + "$#{monthly_payment.round(2)}")
+
+  # Final Remarks
   prompt(messages('final', LANGUAGE))
   input = gets().chomp().downcase()
-  #break unless input.start_with?("y")
+
   if LANGUAGE == 'en'
     break unless input.start_with?('y')
-  else 
+  else
     break unless input.start_with?('s')
-  end  
-end # Main Loop
+  end
+end
 
+clear_screen(0.5)
+prompt(messages('goodbye', LANGUAGE))
