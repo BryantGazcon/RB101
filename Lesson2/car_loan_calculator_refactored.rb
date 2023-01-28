@@ -85,6 +85,14 @@ def prompt_user_loan_term_months
   end
 end
 
+def validate_user_loan_term(years1, months1)
+  while years1.to_i + months1.to_i <= 0
+    years1 = prompt_user_loan_term_years  
+    months1 = prompt_user_loan_term_months
+  end
+  return years1, months1
+end
+
 def prompt_user_apr
   loop do
     prompt_message('APR')
@@ -117,6 +125,9 @@ loop do # Main Loop
   # Loan Term
   loan_term_years = prompt_user_loan_term_years()
   loan_term_months = prompt_user_loan_term_months()
+
+  loan_term_years, loan_term_months = validate_user_loan_term(loan_term_years, loan_term_months)
+
 
   # APR
   clear_screen(0.5)
