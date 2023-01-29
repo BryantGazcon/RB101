@@ -107,12 +107,17 @@ def prompt_user_apr
   end
 end
 
+
 def display_data(amount, term, apr, monthly)
-  prompt(MESSAGES['output1'] + " $#{amount}")
-  prompt(MESSAGES['output2'] + " #{term}")
-  prompt(MESSAGES['output3'] + " #{apr}%")
-  prompt(MESSAGES['output4'] + " $#{monthly.round(2)}")
+  <<-MSG
+  +-----------------+--------------------+---------+---------------------------+
+  |  LOAN AMOUNT    | LOAN TERM (Months) |  APR    |  MONTHLY PAYMENT          
+  +-----------------+--------------------+---------+---------------------------+
+  | $#{amount}           |    #{term}              | #{apr}%      | $#{monthly.round(2)}                
+  +-----------------+--------------------+---------+---------------------------+
+  MSG
 end
+  
 
 loop do # Main Loop
   prompt_message('welcome')
@@ -140,7 +145,7 @@ loop do # Main Loop
 
   monthly_payment = calculate_monthly_payment(loan_amount, monthly_interest_rate, loan_term)
 
-  display_data(loan_amount, loan_term, apr, monthly_payment)
+  puts display_data(loan_amount, loan_term, apr, monthly_payment)
 
   # Final Remarks
   prompt_message('final')
