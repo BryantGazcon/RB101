@@ -113,13 +113,6 @@ def print_final_msg(user, computer)
   end
 end
 
-def reset_counter(win_count, loss_count, tie_count)
-  win_count = 0
-  loss_count = 0
-  tie_count = 0
-  return win_count, loss_count, tie_count
-end
-
 user_wins = 0
 user_losses = 0
 ties = 0
@@ -144,6 +137,6 @@ loop do
     input = gets.chomp
     clear_screen(2)
     break unless input.start_with?('y')
-    user_wins, user_losses, ties = reset_counter(user_wins, user_losses, ties)
+    user_wins, user_losses, ties = 0, 0, 0
   end
 end
