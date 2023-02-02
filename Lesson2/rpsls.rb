@@ -137,6 +137,8 @@ loop do
     input = gets.chomp
     clear_screen(2)
     break unless input.start_with?('y')
-    user_wins, user_losses, ties = 0, 0, 0
+    user_wins = 0 
+    user_losses = 0
+    ties = 0
   end
 end
